@@ -1,0 +1,6 @@
+@InfionionCodingChalleng_HostAddress = http://localhost:5176
+
+GET {{InfionionCodingChalleng_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
