@@ -7,6 +7,7 @@ using InfionionCodingChalleng.Interface;
 using InfionionCodingChalleng.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfionionCodingChalleng.Controllers
 {
@@ -16,10 +17,12 @@ namespace InfionionCodingChalleng.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
-        public AccountController(UserManager<AppUser> userManager , ITokenService tokenService)
+        private readonly SignInManager<AppUser> _signInManager;
+        public AccountController(UserManager<AppUser> userManager , ITokenService tokenService, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _tokenService = tokenService;
+            _signInManager = signInManager;
         }
         //Register user Endpoint
         [HttpPost("register")]
@@ -72,5 +75,31 @@ namespace InfionionCodingChalleng.Controllers
                 return StatusCode(500, ex);
             }
         }
+
+        // Login Endpoint
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginDto loginDto)
+        {
+            if(!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+            var user = await _userManager.Users.FirstOrDefaultAsync(x=> x.UserName == loginDto.UserName.ToLower());
+            if(user == null )
+            return Unauthorized("Invalid Username");
+
+            var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.PassWord, false);
+            if(!result.Succeeded)
+            return Unauthorized("Username and/ or Password is incorrect");
+
+            return Ok(
+                new NewUserDto
+                {
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    Token = _tokenService.CreateToken(user)
+                }
+            );
+        }
+
     }
 }

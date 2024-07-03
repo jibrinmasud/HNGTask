@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InfionionCodingChalleng")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+750418756a54d191869e9d64de9cf82de2c3b097")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f57da6a393021d1e1f2c44e0b5a24b5d9a5a2a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("InfionionCodingChalleng")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InfionionCodingChalleng")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

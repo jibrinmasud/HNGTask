@@ -142,3 +142,6 @@ C:\Users\VP\Desktop\Infionion\InfionionCodingChalleng\bin\Debug\net8.0\Microsoft
 C:\Users\VP\Desktop\Infionion\InfionionCodingChalleng\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\VP\Desktop\Infionion\InfionionCodingChalleng\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\VP\Desktop\Infionion\InfionionCodingChalleng\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\VP\Desktop\Infionion\InfionionCodingChalleng\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\VP\Desktop\Infionion\InfionionCodingChalleng\bin\Debug\net8.0\MailKit.dll
+C:\Users\VP\Desktop\Infionion\InfionionCodingChalleng\bin\Debug\net8.0\MimeKit.dll
