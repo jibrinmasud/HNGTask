@@ -17,7 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
-// builder.Services.AddScoped<IEmailSender, EmailSender>();
+//builder.Services.AddScoped<IEmailSender, EmailSender>();
+
 
 // swagger configuration to use jwt
 

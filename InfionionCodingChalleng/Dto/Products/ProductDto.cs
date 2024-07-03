@@ -1,15 +1,18 @@
-using System.ComponentModel.DataAnnotations;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-public class Product
+namespace InfionionCodingChalleng.Dto.Products
 {
-    [Key]
+    public class ProductDto
+    {
     public Guid Id { get; set; }
-    [Required]
     public string? ProductName { get; set; }
     public string? Description { get; set; }
      public string Quantity { get; set; } = string.Empty;
     public string  Category { get; set; }= string.Empty;
-    [Required]
     public decimal Price { get; set; }
     public DateTime CreatedAt { get; set; }
+    }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 public class ApplicationDbContext: IdentityDbContext<AppUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options){}
-    public DbSet<User> Users { get; set; }
+
     public DbSet <Product> Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)

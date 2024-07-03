@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfionionCodingChalleng.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240703010128_UpdatedMigration")]
+    partial class UpdatedMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,13 +124,13 @@ namespace InfionionCodingChalleng.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "688aff15-effd-4d7a-aa18-d8c618e92766",
+                            Id = "62c7fe48-acf5-4396-b7d3-dcd251698306",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "031b9219-44f5-4491-8509-06bb7045c915",
+                            Id = "c6b47b97-5daf-4a07-a62b-c6f2e9bd582c",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -245,10 +248,6 @@ namespace InfionionCodingChalleng.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -258,11 +257,7 @@ namespace InfionionCodingChalleng.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Quantity")
+                    b.Property<string>("ProducName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

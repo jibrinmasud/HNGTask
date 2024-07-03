@@ -54,7 +54,7 @@ namespace InfionionCodingChalleng.Controllers
                         return Ok(
                             new NewUserDto
                             {
-                                UserName =appUser.UserName,
+                                UserName = appUser.UserName,
                                 Email = appUser.Email,
                                 Token = _tokenService.CreateToken(appUser)
                             }
@@ -83,18 +83,17 @@ namespace InfionionCodingChalleng.Controllers
             if(!ModelState.IsValid)
             return BadRequest(ModelState);
 
-            var user = await _userManager.Users.FirstOrDefaultAsync(x=> x.UserName == loginDto.UserName.ToLower());
+            var user = await _userManager.Users.FirstOrDefaultAsync(x=> x.Email == loginDto.Email.ToLower());
             if(user == null )
             return Unauthorized("Invalid Username");
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.PassWord, false);
             if(!result.Succeeded)
-            return Unauthorized("Username and/ or Password is incorrect");
+            return Unauthorized("Invalid Email and/ or Password is incorrect");
 
             return Ok(
                 new NewUserDto
                 {
-                    UserName = user.UserName,
                     Email = user.Email,
                     Token = _tokenService.CreateToken(user)
                 }

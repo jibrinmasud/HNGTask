@@ -9,7 +9,7 @@ namespace InfionionCodingChalleng.Dto.Account
     public class LoginDto
     {
         [Required]
-        public string? UserName { get; set; }
+        public string? Email { get; set; }
         public string? PassWord { get; set; }
         
     }
